@@ -1,0 +1,31 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mkkiyoi/Burger.git"
+  },
+  "keywords": [
+    "Node",
+    "Express",
+    "MySQL",
+    "Handlebars"
+  ],
+  "author": "Matthew Kiyoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mkkiyoi/Burger/issues"
+  },
+  "homepage": "https://github.com/Mkkiyoi/Burger#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1"
+  }
+}
