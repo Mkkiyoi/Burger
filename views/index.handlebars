@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Item #</th>
+                        <th scope="col">Burger Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each burgerData}}
+                    <tr>
+                        <th scope="row">{{row.BurgerID}}</th>
+                        <td scope="col">{{row.BurgerName}}</th>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <button class="btn btn-secondary" id="submit_burger">Submit Burger</button>
+        </div>
+    </div>
+</div>
