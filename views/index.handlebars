@@ -1,22 +1,33 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Item #</th>
-                        <th scope="col">Burger Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each burgerData}}
-                    <tr>
-                        <th scope="row">{{row.BurgerID}}</th>
-                        <td scope="col">{{row.BurgerName}}</th>
-                    </tr>
-                    {{/each}}
-                </tbody>
-            </table>
+            <h1>Burgers!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2>Burgers Ready To Be Devoured</h2>
+            <ul>
+                {{#each burgers}}
+                    {{#unless eaten}}
+                        {{> burgers/burger-block devoured=true}}
+                    {{/unless}}
+                {{/each}}
+            </ul>
+
+            <h2>Burgers Already Devoured</h2>
+
+            <ul>
+                {{#each burgers}}
+                    {{#if eaten}}
+                        {{> burgers/burger-block devoured=false}}
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
             <button class="btn btn-secondary" id="submit_burger">Submit Burger</button>
         </div>
     </div>

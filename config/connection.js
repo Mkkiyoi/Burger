@@ -1,7 +1,7 @@
 // Import Node Modules
 let mysql = require('mysql');
 require('dotenv').config();
-let keys = require('keys');
+let keys = require('../keys');
 
 let connection = mysql.createConnection({
     host: "localhost",
