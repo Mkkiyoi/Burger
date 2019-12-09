@@ -18,6 +18,7 @@ $(() => {
     $('.delete-burger').on('click', (event) => {
         event.preventDefault();
         let id = $(this).data('id');
+        console.log(id);
         $.ajax('/api/burgers/' + id, {
             type: 'DELETE'
         }).then(() => {
