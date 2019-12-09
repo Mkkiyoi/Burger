@@ -1,6 +1,6 @@
 $(() => {
     
-    $('.create-burger').on('click', (event) => {
+    $('.create-burger').on('click', function(event) {
         event.preventDefault();
         let newBurger = {
             name: $('#burgerName').val().trim()
@@ -15,7 +15,7 @@ $(() => {
         })
     });
 
-    $('.delete-burger').on('click', (event) => {
+    $('.delete-burger').on('click', function(event) {
         event.preventDefault();
         let id = $(this).data('id');
         console.log($(this))
@@ -28,7 +28,7 @@ $(() => {
         });
     });
     
-    $('.update-devoured').on('click', (event) => {
+    $('.update-devoured').on('click', function(event) {
         event.preventDefault();
         let id = $(this).data('id');
         let newDevoured = $(this).data('newdevoured');
