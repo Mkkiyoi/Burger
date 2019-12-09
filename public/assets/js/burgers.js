@@ -1,6 +1,6 @@
 $(() => {
     
-    $('.create-burger').on('submit', function(event) {
+    $('#create-burger').on('submit', function(event) {
         event.preventDefault();
         let newBurger = {
             name: $('#burgerName').val().trim()
