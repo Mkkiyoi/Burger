@@ -1,23 +1,23 @@
 let orm = require('../config/orm');
 
 let burger = {
-    all: (cb) => {
-        orm.all("burgers", (results) => {
+    all: function(cb) {
+        orm.all("burgers", function(results) {
             cb(results);
         })
     }, 
-    create: (columns, values, cb) => {
-        orm.all("burgers", columns, values, (results) => {
+    create: function (columns, values, cb) {
+        orm.all("burgers", columns, values, function(results) {
             cb(results);
         })
     },
-    update: (objColVals, condition, cb) => {
-        orm.all("burgers", objColVals, condition, (results) => {
+    update: function (objColVals, condition, cb) {
+        orm.all("burgers", objColVals, condition, function(results) {
             cb(results);
         })
     },
-    delete: (condition, cb) => {
-        orm.all("burgers", condition,  (results) => {
+    delete: function(condition, cb) {
+        orm.all("burgers", condition,  function(results) {
             cb(results);
         })
     }

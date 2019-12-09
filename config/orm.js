@@ -24,33 +24,33 @@ function objToSql(ob) {
 }
 
 let orm = {
-    all: (table, cb) => {
-        connection.query('SELECT * FROM ' + table + ';', (error, results) => {
+    all: function(table, cb) {
+        connection.query('SELECT * FROM ' + table + ';', function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
-    create: (table, columns, values, cb) => {
+    create: function(table, columns, values, cb) {
         connection.query('INSERT INTO ' + table + ' (' + columns.toString() + ') ' 
                          + ' VALUES (' + printQuestionMarks(values.length) + ');', 
-                         values, (error, results) => {
+                         values, function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
-    update: (table, objColVals, condition, cb) => {
+    update: function(table, objColVals, condition, cb) {
         connection.query('UPDATE ' + table 
                       + ' SET ' + objToSql(objColVals) 
                       + ' WHERE ' + condition + ';', 
-                        (error, results) => {
+                        function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
-    delete: (table, condition, cb) => {
+    delete: function(table, condition, cb) {
         connection.query('DELETE FROM ' + table 
                       + ' WHERE ' + condition + ' ;',
-                        (error, results) => {
+                        function(error, results) {
             if (error) throw error;
             cb(results);
         });
