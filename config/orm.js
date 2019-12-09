@@ -24,35 +24,35 @@ function objToSql(ob) {
 }
 
 let orm = {
-    all: (table, callback) => {
+    all: (table, cb) => {
         connection.query('SELECT * FROM ' + table + ';', (error, results) => {
             if (error) throw error;
-            callback(results);
+            cb(results);
         });
     },
-    create: (table, columns, values, callback) => {
+    create: (table, columns, values, cb) => {
         connection.query('INSERT INTO ' + table + ' (' + columns.toString() + ') ' 
                          + ' VALUES (' + printQuestionMarks(values.length) + ');', 
                          values, (error, results) => {
             if (error) throw error;
-            callback(results);
+            cb(results);
         });
     },
-    update: (table, objColVals, condition, callback) => {
+    update: (table, objColVals, condition, cb) => {
         connection.query('UPDATE ' + table 
                       + ' SET ' + objToSql(objColVals) 
                       + ' WHERE ' + condition + ';', 
                         (error, results) => {
             if (error) throw error;
-            callback(results);
+            cb(results);
         });
     },
-    delete: (table, condition, callback) => {
+    delete: (table, condition, cb) => {
         connection.query('DELETE FROM ' + table 
                       + ' WHERE ' + condition + ' ;',
                         (error, results) => {
             if (error) throw error;
-            callback(results);
+            cb(results);
         });
     }
 }
