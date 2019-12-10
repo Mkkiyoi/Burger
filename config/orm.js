@@ -27,7 +27,7 @@ let orm = {
     all: function(table, cb) {
         connection.query('SELECT * FROM ' + table + ';', function(error, results) {
             if (error) throw error;
-            return cb(results);
+            cb(results);
         });
     },
     create: function(table, columns, values, cb) {
@@ -35,7 +35,7 @@ let orm = {
                          + ' VALUES (' + printQuestionMarks(values.length) + ');', 
                          values, function(error, results) {
             if (error) throw error;
-            return cb(results);
+            cb(results);
         });
     },
     update: function(table, objColVals, condition, cb) {
@@ -44,7 +44,7 @@ let orm = {
                       + ' WHERE ' + condition + ';', 
                         function(error, results) {
             if (error) throw error;
-            return cb(results);
+            cb(results);
         });
     },
     delete: function(table, condition, cb) {
@@ -52,7 +52,7 @@ let orm = {
                       + ' WHERE ' + condition + ' ;',
                         function(error, results) {
             if (error) throw error;
-            return cb(results);
+            cb(results);
         });
     }
 }

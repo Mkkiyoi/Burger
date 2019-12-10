@@ -16,7 +16,7 @@ router.post('/api/burgers', function(req, res) {
         'name'
     ], [
         req.body.burgerName
-    ], function(result) {
+    ], function cb(result) {
         res.json({id: result.insertId});
     });
 });
