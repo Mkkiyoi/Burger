@@ -33,6 +33,7 @@ let orm = {
     },
     create: function(table, columns, values, cb) {
         let queryString = 'INSERT INTO ' + table + ' (' + columns.toString() + ') ' + ' VALUES (' + printQuestionMarks(columns.length) + ');';
+        console.log(queryString)
         connection.query(queryString, values, function(error, results) {
             if (error) throw error;
             cb(results);
