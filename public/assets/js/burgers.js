@@ -2,6 +2,7 @@ $(() => {
     
     $('#create-burger').on('submit', function(event) {
         event.preventDefault();
+        let id = $(this).data('id');
         let newBurger = {
             name: $('#burgerName').val().trim()
         };
