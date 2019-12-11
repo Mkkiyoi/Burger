@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let burger = require('../models/burger');
 
-let returnStatus = function(result) {
+let returnStatus = function(res, res, result) {
     if (result.changeRows === 0) {
         return res.status(404).end();
     } else {
@@ -10,7 +10,7 @@ let returnStatus = function(result) {
     }
 };
 
-let renderData = function(data) {
+let renderData = function(req, res, data) {
     let burgerData = {
       burgers: data
     };
