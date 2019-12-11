@@ -9,7 +9,7 @@
             <h2>Burgers Ready To Be Devoured</h2>
             <ul>
                 {{#each burgers}}
-                    {{#unless eaten}}
+                    {{#unless devoured}}
                         {{> burgers/burger-block devoured=true}}
                     {{/unless}}
                 {{/each}}
@@ -21,7 +21,7 @@
             <h2>Burgers Already Devoured</h2>
             <ul>
                 {{#each burgers}}
-                    {{#if eaten}}
+                    {{#if devoured}}
                         {{> burgers/burger-block devoured=false}}
                     {{/if}}
                 {{/each}}
