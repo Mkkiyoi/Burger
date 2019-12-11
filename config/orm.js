@@ -25,32 +25,30 @@ function objToSql(ob) {
 
 let orm = {
     all: function(table, cb) {
-        connection.query('SELECT * FROM ' + table + ';', function(error, results) {
+        let queryString = 'SELECT * FROM ' + table + ';';
+        connection.query(queryString, function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
     create: function(table, columns, values, cb) {
-        connection.query('INSERT INTO ' + table + ' (' + columns.toString() + ') ' 
-                         + ' VALUES (' + printQuestionMarks(values.length) + ');', 
-                         values, function(error, results) {
+        let queryString = 'INSERT INTO ' + table + ' (' + columns.toString() + ') ' + ' VALUES (' + printQuestionMarks(values.length) + ');';
+        console.log(queryString)
+        connection.query(queryString, values, function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
     update: function(table, objColVals, condition, cb) {
-        connection.query('UPDATE ' + table 
-                      + ' SET ' + objToSql(objColVals) 
-                      + ' WHERE ' + condition + ';', 
-                        function(error, results) {
+        let queryString = 'UPDATE ' + table + ' SET ' + objToSql(objColVals) + ' WHERE ' + condition + ';';
+        connection.query(queryString, function(error, results) {
             if (error) throw error;
             cb(results);
         });
     },
     delete: function(table, condition, cb) {
-        connection.query('DELETE FROM ' + table 
-                      + ' WHERE ' + condition + ' ;',
-                        function(error, results) {
+        let queryString = 'DELETE FROM ' + table + ' WHERE ' + condition + ' ;';
+        connection.query(queryString, function(error, results) {
             if (error) throw error;
             cb(results);
         });
