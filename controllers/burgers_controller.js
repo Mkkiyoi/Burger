@@ -18,7 +18,6 @@ router.post('/api/burgers', function(req, res) {
         req.body.name
     ], function(result) {
         res.json({id: result.insertId});
-        res.redirect("/");
     });
 });
 
@@ -32,7 +31,6 @@ router.put('/api/burgers/:id', function(req, res) {
         } else {
             res.status(200).end();
         }
-        res.redirect("/");
     });
 });
 
@@ -44,7 +42,6 @@ router.delete('/api/burgers/:id', function(req, res) {
         } else {
             res.status(200).end();
         }
-        res.redirect("/");
     });
 });
 
