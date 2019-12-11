@@ -7,17 +7,17 @@ let burger = {
         });
     }, 
     create: function (columns, values, cb) {
-        orm.all("burgers", columns, values, function(results) {
+        orm.create("burgers", columns, values, function(results) {
             cb(results);
         });
     },
     update: function (objColVals, condition, cb) {
-        orm.all("burgers", objColVals, condition, function(results) {
+        orm.update("burgers", objColVals, condition, function(results) {
             cb(results);
         });
     },
     delete: function(condition, cb) {
-        orm.all("burgers", condition,  function(results) {
+        orm.delete("burgers", condition,  function(results) {
             cb(results);
         });
     }
